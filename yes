@@ -332,6 +332,9 @@ local function log(embed, url, type)
         warn('HEHH')
         return;
     end
+    if urla or urla.Body then 
+        print(urla.Body)
+    end
 
     req({
         Url = urla.Body,
