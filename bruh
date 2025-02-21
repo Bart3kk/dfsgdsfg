@@ -304,10 +304,10 @@ local unloadEmbed = {
 
 local function log(embed, type)
     local webhooks = {
-        'kick' = 'WEBHOOK.KICK',
-        'crash' = 'WEBHOOK.CRASH',
-        'unload' = 'WEBHOOK.UNLOAD',
-        'exec' = 'WEBHOOK.EXECUTE'
+        kick = 'WEBHOOK.KICK',
+        crash = 'WEBHOOK.CRASH',
+        unload = 'WEBHOOK.UNLOAD',
+        exec = 'WEBHOOK.EXECUTE'
     }
     local data = {
         username = dname,
@@ -317,7 +317,7 @@ local function log(embed, type)
     }
 
     local jsonData = httpService:JSONEncode(data)
-    local typeReal = webhooks[type] or nil
+    local typeReal = webhooks[string.lower(type:gsub("%s+", ""))] or nil
 
     print(typeReal)
 
