@@ -53,7 +53,7 @@ local checkBackup2 = req({
     Method = "GET"
 })
 
-if (checkMain.StatusCode == 429) and (checkBackup1.StatusCode == 429) and (checkBackup2.StatusCode == 429) then
+--[[if (checkMain.StatusCode == 429) and (checkBackup1.StatusCode == 429) and (checkBackup2.StatusCode == 429) then
     loadstring(game:HttpGet('https://raw.githubusercontent.com/ltseverydayyou/uuuuuuu/refs/heads/main/Funky%20Friday/OldBot.lua'))()
 elseif (checkMain.StatusCode == 429) and (checkBackup1.StatusCode == 429) then
     apiLink = apiBackup2
@@ -61,7 +61,8 @@ elseif (checkMain.StatusCode == 429) then
     apiLink = apiBackup1
 else
     apiLink = apiMain
-end
+end]]
+apiLink = apiBackup1
 local fetchUrl = apiLink .. "/getWebhook"
 
 local check = req({
